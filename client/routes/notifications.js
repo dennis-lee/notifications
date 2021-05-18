@@ -1,5 +1,5 @@
-const secrets = require("../db/secrets.js");
-const DB_URI = `mongodb+srv://${secrets.mongodbUser}:${secrets.mongodbPassword}@${secrets.mongodbCluster}/${secrets.mongodbDatabase}`;
+// const secrets = require("../db/secrets.js");
+// const DB_URI = `mongodb+srv://${secrets.mongodbUser}:${secrets.mongodbPassword}@${secrets.mongodbCluster}/${secrets.mongodbDatabase}`;
 
 const url = require("url");
 const Agenda = require("agenda");
@@ -10,10 +10,10 @@ const { Event } = require("../db/models/event.js");
 const { Customer } = require("../db/models/customer.js");
 const { Webhook } = require("../db/models/webhook.js");
 
-const agenda = new Agenda({
-  db: { address: DB_URI },
-  processEvery: "30 seconds",
-});
+// const agenda = new Agenda({
+//   db: { address: DB_URI },
+//   processEvery: "30 seconds",
+// });
 var router = require("express").Router();
 
 router.post("/notifications", (req, res, next) => {
